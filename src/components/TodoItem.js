@@ -1,6 +1,6 @@
-import React from "react";
-import styled, { css } from "styled-components";
-import { MdDone, MdDelete } from "react-icons/md";
+import React from 'react'
+import styled, { css } from 'styled-components'
+import { MdDone, MdDelete } from 'react-icons/md'
 
 const Remove = styled.div`
     opacity: 0;
@@ -11,7 +11,7 @@ const Remove = styled.div`
     font-size: 24px;
     cursor: pointer;
     &:hover : #ff6b6b;
-`;
+`
 const CheckCircle = styled.div`
   width: 32px;
   height: 32px;
@@ -29,7 +29,7 @@ const CheckCircle = styled.div`
       border: 1px solid #38d9a9;
       color: #38d9a9;
     `}
-`;
+`
 const Text = styled.div`
   flex: 1;
   font-size: 21px;
@@ -39,7 +39,7 @@ const Text = styled.div`
     css`
       color: #ced4da;
     `}
-`;
+`
 const TodoItemBlock = styled.div`
   display: flex;
   align-items: center;
@@ -50,7 +50,7 @@ const TodoItemBlock = styled.div`
       opacity: 1;
     }
   }
-`;
+`
 
 function TodoItem({ id, done, text }) {
   return (
@@ -61,7 +61,7 @@ function TodoItem({ id, done, text }) {
         <MdDelete />
       </Remove>
     </TodoItemBlock>
-  );
+  )
 }
 
-export default TodoItem;
+export default TodoItem

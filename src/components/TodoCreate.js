@@ -1,6 +1,6 @@
-import React, { useState } from "react";
-import styled, { css } from "styled-components";
-import { MdAdd } from "react-icons/md";
+import React, { useState } from 'react'
+import styled, { css } from 'styled-components'
+import { MdAdd } from 'react-icons/md'
 
 const CircleButton = styled.button`
     background:: #38d9a9;
@@ -45,14 +45,14 @@ const CircleButton = styled.button`
         }
         transform: translate(-50%, 50%) rotate(45deg);
       `}
-`;
+`
 
 const InsertFormPositioner = styled.div`
   width: 100%;
   bottom: 0;
   left: 0;
   position: absolute;
-`;
+`
 
 const InsertForm = styled.div`
   background: #f8f9fa;
@@ -61,7 +61,7 @@ const InsertForm = styled.div`
   border-bottom-left-radius: 16px;
   border-bottom-right-radius: 16px;
   border-top: 1px solid #e9ecef;
-`;
+`
 
 const Input = styled.input`
   padding: 12px;
@@ -71,11 +71,11 @@ const Input = styled.input`
   outline: none;
   font-size: 18px;
   box-sizing: border-box;
-`;
+`
 
 function TodoCreate() {
-  const [open, setOpen] = useState(false);
-  const onToggle = () => setOpen(!open);
+  const [open, setOpen] = useState(false)
+  const onToggle = () => setOpen(!open)
 
   return (
     <>
@@ -90,7 +90,7 @@ function TodoCreate() {
         <MdAdd />
       </CircleButton>
     </>
-  );
+  )
 }
 
-export default TodoCreate;
+export default TodoCreate

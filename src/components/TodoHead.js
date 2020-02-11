@@ -1,5 +1,5 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react'
+import styled from 'styled-components'
 
 const TodoHeadBlock = styled.div`
   padding-top: 48;
@@ -26,7 +26,7 @@ const TodoHeadBlock = styled.div`
       margin-top: 40px
       fornt-weight: bold;
   }
-`;
+`
 
 function TodoHead() {
   return (
@@ -36,7 +36,7 @@ function TodoHead() {
       <div className="day"> 일요일 </div>
       <div className="tasks-left"> 할 일 2개 남음</div>
     </TodoHeadBlock>
-  );
+  )
 }
 
-export default TodoHead;
+export default TodoHead
