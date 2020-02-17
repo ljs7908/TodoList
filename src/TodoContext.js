@@ -1,10 +1,6 @@
-import React, {
-  useReducer,
-  creactContext,
-  createContext,
-  useContext,
-  useRef,
-} from 'react'
+import React, { useReducer, createContext, useContext, useRef } from 'react'
+
+import axios from 'axios'
 
 const initialTodos = [
   {
@@ -45,6 +41,7 @@ function todoReducer(state, action) {
     case 'REMOVE':
       return state.filter(todo => todo.id !== action.id)
     default:
+      // eslint-disable-next-line
       throw new Error('Unhandled action type: ${action.type}')
   }
 }
@@ -54,6 +51,11 @@ const TodoDispatchContext = createContext()
 const TodoNextIdContext = createContext()
 
 export function TodoProvider({ children }) {
+  axios.get('http://localhost:4000/api/todos').then(function(response) {
+    console.log(response + '!!!!!!')
+  })
+
+  console.log('!!!!!!!!!!!@#@#@@#@')
   const [state, dispatch] = useReducer(todoReducer, initialTodos)
   const nextId = useRef(5)
 
