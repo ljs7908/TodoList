@@ -5,6 +5,7 @@ import TodoHead from './components/TodoHead'
 import TodoList from './components/TodoList'
 import TodoCreate from './components/TodoCreate'
 import { TodoProvider } from './TodoContext'
+import Users from './Users'
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -19,6 +20,7 @@ function App() {
       <TodoTemplate>
         <TodoHead />
         <TodoList />
+        <Users />
         <TodoCreate />
       </TodoTemplate>
     </TodoProvider>

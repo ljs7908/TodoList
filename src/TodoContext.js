@@ -1,6 +1,11 @@
-import React, { useReducer, createContext, useContext, useRef } from 'react'
-
-import axios from 'axios'
+import React, {
+  useReducer,
+  createContext,
+  useContext,
+  useRef,
+  useState,
+  useEffect,
+} from 'react'
 
 const initialTodos = [
   {
@@ -51,11 +56,6 @@ const TodoDispatchContext = createContext()
 const TodoNextIdContext = createContext()
 
 export function TodoProvider({ children }) {
-  axios.get('http://localhost:4000/api/todos').then(function(response) {
-    console.log(response + '!!!!!!')
-  })
-
-  console.log('!!!!!!!!!!!@#@#@@#@')
   const [state, dispatch] = useReducer(todoReducer, initialTodos)
   const nextId = useRef(5)
 
