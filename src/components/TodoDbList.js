@@ -1,7 +1,16 @@
 import React, { useState, useEffect } from 'react'
+import TodoItem from './TodoItem'
+import styled from 'styled-components'
 import axios from 'axios'
 
-function Users() {
+const TodoListBlock = styled.div`
+  flex: 1;
+  padding: 20px 32px;
+  padding-bottom: 49px;
+  overflow-y: auto;
+`
+
+function TodoDbList() {
   const [todos, setTodos] = useState(null)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState(null)
@@ -29,14 +38,17 @@ function Users() {
   if (error) return <div>에러가 발생했습니다</div>
   if (!todos) return null
   return (
-    <ul>
-      {todos.map(user => (
-        <li key={user.id}>
-          {user.text} ({user.id})
-        </li>
+    <TodoListBlock>
+      {todos.map(todo => (
+        <TodoItem
+          key={todo._id}
+          id={todo.id}
+          text={todo.text}
+          done={todo.done}
+        />
       ))}
-    </ul>
+    </TodoListBlock>
   )
 }
 
-export default Users
+export default TodoDbList
